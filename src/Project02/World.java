@@ -64,8 +64,11 @@ public class World
 
     public void createWorld()
     {
-        allNations.add(new Nation("Idiots", (worldLifePoints / 2)));
-        allNations.add(new Nation("Minions", (worldLifePoints) / 2));
+        allNations.add(new Nation("Idiots", (worldLifePoints / 5)));
+        allNations.add(new Nation("Minions", (worldLifePoints) / 5));
+        allNations.add(new Nation("Robs Nation", (worldLifePoints / 5)));
+        allNations.add(new Nation("Braden Nation", (worldLifePoints / 5)));
+        allNations.add(new Nation("Davids Nation", (worldLifePoints / 5)));
     }
 
 
