@@ -10,5 +10,4 @@ public class SchaperWarrior extends People {
     public int encounterLifePoints(People me, People otherPerson) {
         return encounterStrategy.strategy(me, otherPerson);
     }
-
 }
