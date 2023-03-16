@@ -1,3 +1,4 @@
-package PACKAGE_NAME;
+package tests;
+
 public class RobertWizardStratTest {
 }
