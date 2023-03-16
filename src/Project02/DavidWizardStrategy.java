@@ -21,7 +21,7 @@ public class DavidWizardStrategy implements Strategy {
         {
             if (otherPerson.getLifePoints() < me.getLifePoints()) // heal a friend
             {
-                lifePoints = (int) (me.getLifePoints() - otherPerson.getLifePoints() / 2);
+                lifePoints = (int) (me.getLifePoints() - otherPerson.getLifePoints() / 1.5);
             }
             else
             {
