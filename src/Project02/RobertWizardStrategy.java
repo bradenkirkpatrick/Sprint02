@@ -2,7 +2,7 @@ package Project02;
 
 import java.util.Random;
 
-public class RobertWizardStrategy {
+public class RobertWizardStrategy implements Strategy {
 
 
     public int strategy(People me, People otherPerson) {
