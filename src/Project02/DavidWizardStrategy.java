@@ -24,6 +24,7 @@ public class DavidWizardStrategy implements Strategy {
                 lifePoints = (int) (me.getLifePoints() - otherPerson.getLifePoints() / 1.5);
             }
             else if (otherPerson.getLifePoints() == me.getLifePoints()) {
+                //something stupid
                 lifePoints *= (me.getLifePoints() / otherPerson.getLifePoints());
             }
             else

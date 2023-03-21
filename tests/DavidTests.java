@@ -18,7 +18,8 @@ public class DavidTests {
         DavidWizard wiz = new DavidWizard("the moon", "a tribe", 87, new DavidWizardStrategy());
         DavidWizard wiz2 = new DavidWizard("the moon", "a tribe", 87 , new DavidWizardStrategy());
         w.encounter(wiz.getLifePoints(), wiz2.getLifePoints());
-        
+        assertEquals(87, wiz.getLifePoints());
+
     }
 }
 
