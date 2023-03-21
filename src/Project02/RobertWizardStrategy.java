@@ -25,7 +25,7 @@ public class RobertWizardStrategy implements Strategy {
         }
         else
         {
-            if (otherPerson.getLifePoints() < me.getLifePoints()) // heal a friend -- steal from friend
+            if (otherPerson.getLifePoints() > me.getLifePoints())  //-- steal from friend
             {
                 lifePoints = (int) (me.getLifePoints() + otherPerson.getLifePoints() / 2);
             }
