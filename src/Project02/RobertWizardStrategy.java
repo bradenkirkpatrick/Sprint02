@@ -7,34 +7,27 @@ public class RobertWizardStrategy implements Strategy {
 
     public int strategy(People me, People otherPerson) {
         int lifePoints = 0;
-        Random rand = new Random();
-        int attack =  rand.nextInt(0,1);
-
         if (me.getNation() != otherPerson.getNation())
         {
             if (otherPerson.getLifePoints() < me.getLifePoints())
             {
-                if (otherPerson.getType() == PeopleType.warrior) // run away from warrior
+                if (otherPerson.getType() == PeopleType.wizard) // attack wizard
                 {
-                    lifePoints = -me.getLifePoints();
+
+                    lifePoints = (int) (me.getLifePoints() / 4);
+                    //lifePoints = -me.getLifePoints(); - run away
                 }
-                // attack a wizard
-                else if (otherPerson.getType() == PeopleType.wizard)
+                else // attack a warrior
                 {
-                    if(attack == 1) {
-                        lifePoints = (int) (me.getLifePoints() / 2);
-                    }
-                    else{
-                        lifePoints = -me.getLifePoints();
-                    }
+                    lifePoints = (int) (me.getLifePoints()/2);
                 }
             }
         }
         else
         {
-            if (otherPerson.getLifePoints() < me.getLifePoints()) // heals me instead of healing them
+            if (otherPerson.getLifePoints() < me.getLifePoints()) // heal a friend -- steal from friend
             {
-                lifePoints = (int) (otherPerson.getLifePoints() + me.getLifePoints() / 2);
+                lifePoints = (int) (me.getLifePoints() + otherPerson.getLifePoints() / 2);
             }
             else
             {
