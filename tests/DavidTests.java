@@ -1,11 +1,6 @@
-package tests;
+import Project02.*;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
-
-import Project02.DavidWarrior;
-import Project02.DavidWarriorStrategy;
-import Project02.DavidWizard;
-import Project02.DavidWizardStrategy;
 
 public class DavidTests {
     
