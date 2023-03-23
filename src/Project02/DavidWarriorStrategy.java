@@ -3,6 +3,7 @@ import java.util.Random;
 
 public class DavidWarriorStrategy implements Strategy {
     private Random rand = new Random();
+    
     public int strategy(People me, People otherPerson) {
         int lifePoints = 0;
         if(me.getNation() == otherPerson.getNation())
