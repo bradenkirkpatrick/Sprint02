@@ -6,10 +6,12 @@ public class DavidTests {
     
     @Test
     public void testPeople() {
-        DavidWarrior dw = new DavidWarrior("Papal States", "Catholicism", 69, new DavidWarriorStrategy());
+        DavidWarrior dw = new DavidWarrior("Papal States", "Catholic Church", 69, new DavidWarriorStrategy());
         DavidWizard dwz = new DavidWizard("DEVS VVLT", "iesus nazarenus rex iudeorum", 33, new DavidWizardStrategy());
-        assertEquals(69, dw.getLifePoints());
+        assertEquals("DEVS VVLT", dwz.getNation());
         assertEquals(33, dwz.getLifePoints());
+        assertEquals("Papal States", dw.getNation());
+        assertEquals("Catholic Church", dw.getTribe());
     }
 
     @Test
@@ -25,10 +27,10 @@ public class DavidTests {
     @Test
     public void testNumberTheNumberValveNeverReachesLol() {
         World w = new World();
+        Nation i = new Nation("Israel", 1000);
         DavidWizard dwiz = new DavidWizard("Israel", "Dan",  100, new DavidWizardStrategy());
-        DavidWizard dwar = new DavidWizard("Edom", "lol idk", 80, new DavidWarriorStrategy());
+        DavidWizard dwar = new DavidWizard("Edom", "huh", 80, new DavidWarriorStrategy());
         w.encounter(dwiz.getLifePoints(), dwar.getLifePoints());
-
     }
 }
 
