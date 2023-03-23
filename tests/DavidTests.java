@@ -21,5 +21,14 @@ public class DavidTests {
         assertEquals(87, wiz.getLifePoints());
 
     }
+
+    @Test
+    public void testNumberTheNumberValveNeverReachesLol() {
+        World w = new World();
+        DavidWizard dwiz = new DavidWizard("Israel", "Dan",  100, new DavidWizardStrategy());
+        DavidWizard dwar = new DavidWizard("Edom", "lol idk", 80, new DavidWarriorStrategy());
+        w.encounter(dwiz.getLifePoints(), dwar.getLifePoints());
+
+    }
 }
 
