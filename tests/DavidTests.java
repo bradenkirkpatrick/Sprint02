@@ -23,7 +23,7 @@ public class DavidTests {
         DavidWarriorStrategy warstrat = new DavidWarriorStrategy();
         assertEquals(87, wiz.getLifePoints());
         assertEquals(87, wiz2.getLifePoints());
-        wizstrat.strategy(wiz, wiz2);
+        System.out.println(wizstrat.strategy(wiz, wiz2));
         w.encounter(wiz.getLifePoints(), wiz2.getLifePoints());
         System.out.println(wiz.getLifePoints());        
 
