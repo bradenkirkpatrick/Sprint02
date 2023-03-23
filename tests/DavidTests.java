@@ -19,8 +19,13 @@ public class DavidTests {
         World w = new World();
         DavidWizard wiz = new DavidWizard("the moon", "a tribe", 87, new DavidWizardStrategy());
         DavidWizard wiz2 = new DavidWizard("the moon", "a tribe", 87 , new DavidWizardStrategy());
-        w.encounter(wiz.getLifePoints(), wiz2.getLifePoints());
+        DavidWizardStrategy wizstrat = new DavidWizardStrategy();
+        DavidWarriorStrategy warstrat = new DavidWarriorStrategy();
         assertEquals(87, wiz.getLifePoints());
+        assertEquals(87, wiz2.getLifePoints());
+        wizstrat.strategy(wiz, wiz2);
+        w.encounter(wiz.getLifePoints(), wiz2.getLifePoints());
+        System.out.println(wiz.getLifePoints());        
 
     }
 
