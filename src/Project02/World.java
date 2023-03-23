@@ -42,7 +42,7 @@ public class World
                     System.out.print("Game is over! Winning Nation is: ");
                     if (survivingNations.size() == 0)
                     {
-                        System.out.println("All Nations Distroyed.");
+                        System.out.println("All Nations Destroyed.");
                     }
                     else
                     {
