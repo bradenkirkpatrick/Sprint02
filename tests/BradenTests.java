@@ -2,7 +2,10 @@ import Project02.*;
 
 import org.junit.jupiter.api.Test;
 public class BradenTests {
-    //String nation, String tribe, int lifePoints, Strategy strategy
+    /*
+     * testSameNationWarxWiz is a test that checks the functionality when
+     * encounters are between a bradenwarrior and a bradenwizard of the same nation 
+     */
     @Test
     public static void testSameNationWarxWiz(){
         World world = new World();
@@ -15,6 +18,10 @@ public class BradenTests {
         
     }
 
+    /*
+     * testSameNationWarxWiz is a test that checks the functionality when
+     * encounters are between 2 bradenwizards of the same nation 
+     */
     @Test
     public static void testSameNationWizxWiz(){
         World world = new World();
@@ -27,15 +34,35 @@ public class BradenTests {
         assert(wiz2.getLifePoints() == 20);
     }
 
+    /*
+     * testSameNationWarxWiz is a test that checks the functionality when
+     * encounters are between 2 bradenwizards of the different nation 
+     */
     @Test
-    public static void testDifferentNation(){
+    public static void testWizDifferentNation(){
         World world = new World();
         People wiz1 = new BradenWizard("Eins", "A", 20, new BradenWizardStrategy());
-        People wiz2 = new BradenWarrior("Zwei", "B", 20, new BradenWizardStrategy());
+        People wiz2 = new BradenWizard("Zwei", "B", 20, new BradenWizardStrategy());
         assert(wiz1.encounterLifePoints(wiz1, wiz2) == 20);
         assert(wiz2.encounterLifePoints(wiz2, wiz1) == 20);
         world.encounter(wiz1.encounterLifePoints(wiz1, wiz2), wiz2.encounterLifePoints(wiz2, wiz1));
         assert(wiz1.getLifePoints() < 20);
         assert(wiz2.getLifePoints() < 20);
+    }
+
+    /*
+     * testSameNationWarxWiz is a test that checks the functionality when
+     * encounters are between 2 bradenwarriors of the different nation 
+     */
+    @Test
+    public static void testWarDifferentNation(){
+        World world = new World();
+        People war1 = new BradenWizard("Eins", "A", 20, new BradenWizardStrategy());
+        People war2 = new BradenWizard("Zwei", "B", 20, new BradenWizardStrategy());
+        assert(war1.encounterLifePoints(war1, war2) == 20);
+        assert(war2.encounterLifePoints(war2, war1) == 20);
+        world.encounter(war1.encounterLifePoints(war1, war2), war2.encounterLifePoints(war2, war1));
+        assert(war1.getLifePoints() < 20);
+        assert(war2.getLifePoints() < 20);
     }
 }
