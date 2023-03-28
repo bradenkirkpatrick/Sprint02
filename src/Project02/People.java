@@ -28,11 +28,11 @@ public abstract class People
 
     /**
      *
-     * @param nation
-     * @param tribe
-     * @param person
-     * @param lifePoints
-     * @param strategy
+     * @param nation String nationName
+     * @param tribe String tribe name
+     * @param person PeopleType
+     * @param lifePoints int life points
+     * @param strategy type of Strategy
      * The People Constructor takes in the params above and initializes them
      */
     public People(String nation, String tribe, PeopleType person, int lifePoints, Strategy strategy)
