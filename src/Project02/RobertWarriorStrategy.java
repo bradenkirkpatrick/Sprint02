@@ -1,8 +1,16 @@
 package Project02;
 
+/**
+ * The RobertWizardStrategy class implements the Strategy interface and implements
+ * the strategy method
+ */
 public class RobertWarriorStrategy implements Strategy {
 
 
+    /**
+     * the method strategy takes in two people as a parameter and when an encounter occurs
+     * these lines are executed to help determine each players life points based on their strategy attack
+     */
     public int strategy(People me, People otherPerson) {
         int lifePoints = 0;
         if (me.getNation() == otherPerson.getNation()) {
