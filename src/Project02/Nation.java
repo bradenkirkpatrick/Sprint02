@@ -10,11 +10,11 @@ import Project02.People;
 public class Nation
 {
     /**
-     * @param nationLifePoints
-     * @param  nationName
-     * @param tribes
-     * @param population
-     * @param livingPopulation
+     * @param nationLifePoints int life points
+     * @param  nationName string of name of nation
+     * @param tribes arraylist of Tribes
+     * @param population arraylist of People
+     * @param livingPopulation arraylist of People
      */
     private int nationLifePoints;
     private String nationName;
