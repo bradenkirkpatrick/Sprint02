@@ -2,9 +2,17 @@ package Project02;
 
 import java.util.Random;
 
+/**
+ * The RobertWizardStrategy class implements the Strategy interface and implimenrts 
+ * the strategy method
+ */
 public class RobertWizardStrategy implements Strategy {
 
 
+    /**
+     * the method strategy takes in two people as a paramter and when an encounter occurs
+     * these lines are executed to help determine each players life points based on their strategy attack
+     */
     public int strategy(People me, People otherPerson) {
         int lifePoints = 0;
         if (me.getNation() != otherPerson.getNation())
