@@ -2,9 +2,9 @@ package Project02;
 
 public class BradenWarriorStrategy implements Strategy{
     /**
-     * Warrior strategy is generally aggressive and returns maximum amount of life
-     * points if players are from different nations. If from the same nation then
-     * player will transfer life points.
+     * The braden warrior strategy is that of self sacrtifce. 
+     * the braden warrior will transfer all of its health points to a wizard
+     * of its own nation
      * @param me - person to get life points for.
      * @param otherPerson - the opponent of the encounter
      * @return - Life points to use in the encounter
