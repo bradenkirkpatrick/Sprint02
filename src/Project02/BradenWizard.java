@@ -15,6 +15,8 @@ public class BradenWizard extends People{
 
     /*
      * implements the braden wizard strategy
+     * @param me People
+     * @param otherPerson People
      */
     @Override
     public int encounterLifePoints(People me, People otherPerson) {

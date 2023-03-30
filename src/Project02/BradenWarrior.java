@@ -5,7 +5,7 @@ package Project02;
  */
 public class BradenWarrior extends People {
     public BradenWarrior(String nation, String tribe, int lifePoints, Strategy strategy) {
-        super(nation, tribe, PeopleType.wizard, lifePoints, strategy);
+        super(nation, tribe, PeopleType.warrior, lifePoints, strategy);
         myDescription = ". . .";
     }
 
