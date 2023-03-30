@@ -12,11 +12,11 @@ public class DavidWarriorStrategy implements Strategy {
             {
                 if(otherPerson.getTribe() == me.getTribe())
                 {
-                    lifePoints = -((me.getLifePoints() - otherPerson.getLifePoints()));
+                    lifePoints = -((me.getLifePoints() /4 - otherPerson.getLifePoints() /4));
                 }
                 else
                 {
-                    lifePoints = -((me.getLifePoints() - otherPerson.getLifePoints()));
+                    lifePoints = -((me.getLifePoints() /2 - otherPerson.getLifePoints() /2));
                 }
             }
         }
