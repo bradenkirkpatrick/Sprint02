@@ -19,12 +19,14 @@ public class RobertWizardStrategy implements Strategy {
         {
             if (otherPerson.getLifePoints() < me.getLifePoints())
             {
-                if (otherPerson.getType() == PeopleType.wizard) // attack wizard
-                {
-
-                    lifePoints = (int) (me.getLifePoints() / 4);
-                    //lifePoints = -me.getLifePoints(); - run away
-                }
+                if (otherPerson.getType() == PeopleType.wizard)
+                    if(otherPerson.getLifePoints() > me.getLifePoints()){
+                        // attack wizard
+                        lifePoints = (int) (me.getLifePoints() / 4);
+                    }
+                else if(otherPerson.getLifePoints() < me.getLifePoints()) {
+                        lifePoints = -me.getLifePoints();// - run away
+                    }
                 else // attack a warrior
                 {
                     lifePoints = (int) (me.getLifePoints()/2);
