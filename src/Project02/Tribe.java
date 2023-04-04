@@ -21,12 +21,24 @@ public class Tribe
     {
         nationName = nation;
         tribeName = tribe;
-        tribeLifePoints = lifePoints;
-        for(int i = 0; i < 5; i++)
-            if(i % 2 == 0)
-                members.add(new SchaperWarrior(nationName, tribeName, tribeLifePoints / 5, new WarriorStrategy()));
-            else
-                members.add(new SchaperWizard(nationName, tribeName, tribeLifePoints / 5, new WizardStrategy()));
+        tribeLifePoints = lifePoints / 5;
+        if(nationName == "minions")
+            for(int i = 0; i < 5; i++){
+                members.add(new SchaperWarrior(nationName, tribeName + i, tribeLifePoints, new WizardStrategy()));
+                members.add(new SchaperWizard(nationName, tribeName + i, tribeLifePoints, new WarriorStrategy()));
+        } else if (nationName == "Sussy Imposters") 
+            for(int i = 0; i < 5; i++){
+                members.add(new DavidWarrior(nationName, tribeName + i, tribeLifePoints, new DavidWarriorStrategy()));
+                members.add(new DavidWizard(nationName, tribeName + i, tribeLifePoints, new DavidWizardStrategy()));
+        } else if (nationName == "Robs Nation") 
+            for(int i = 0; i < 5; i++){
+                members.add(new RobertWarrior(nationName, tribeName + i, tribeLifePoints, new RobertWarriorStrategy()));
+                members.add(new RobertWizard(nationName, tribeName + i, tribeLifePoints, new RobertWizardStrategy()));
+        } else if (nationName == "Bradens Nation") 
+            for(int i = 0; i < 5; i++){
+                members.add(new BradenWarrior(nationName, tribeName + i, tribeLifePoints, new BradenWarriorStrategy()));
+                members.add(new BradenWizard(nationName, tribeName + i, tribeLifePoints, new BradenWizardStrategy()));
+            }
         for(int i = 0; i < members.size(); i++)
             livingMembers.addAll(members);
     }
