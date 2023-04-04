@@ -13,10 +13,10 @@ public class BradenWarriorStrategy implements Strategy{
         int lifePoints = 0;
         if(me.getNation() == otherPerson.getNation()) {
             if(PeopleType.wizard == otherPerson.getType()){
-                lifePoints = -Math.min(me.getLifePoints() - 1, 100 - otherPerson.getLifePoints());
+                lifePoints = Math.min(me.getLifePoints() - 2, 98 - otherPerson.getLifePoints());
             } else {
                 if(otherPerson.getLifePoints() > me.getLifePoints()) {
-                    lifePoints = -Math.min(me.getLifePoints() - 1, 100 - otherPerson.getLifePoints());
+                    lifePoints = Math.min(me.getLifePoints() - 2, 98 - otherPerson.getLifePoints());
                 }
             }
         } else {

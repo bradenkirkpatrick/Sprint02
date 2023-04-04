@@ -1,12 +1,5 @@
 package Project02;
-import java.util.Collection;
-import java.util.Collections;
-import java.io.StringBufferInputStream;
 import java.util.ArrayList;
-import Project02.People;
-import Project02.PeopleType;
-import Project02.SchaperWarrior;
-import Project02.SchaperWizard;
 
 
 public class Tribe
@@ -21,7 +14,8 @@ public class Tribe
     {
         nationName = nation;
         tribeName = tribe;
-        tribeLifePoints = lifePoints / 5;
+        tribeLifePoints = lifePoints / 2;
+        // each tribe gets two people
         if(nationName == "Minions"){
             members.add(new SchaperWarrior(nationName, tribeName, tribeLifePoints, new WizardStrategy()));
             members.add(new SchaperWizard(nationName, tribeName, tribeLifePoints, new WarriorStrategy()));

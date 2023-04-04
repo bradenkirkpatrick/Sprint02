@@ -1,13 +1,12 @@
 package Project02;
 
-import Project02.Nation;
-import Project02.People;
 import java.util.*;
 
 public class World
 {
     private final int worldLifePoints = 4000;
     private final int numberOfRounds = 40;
+    private final int MaximumLifePoints = 100;
     private ArrayList<Nation> allNations = new ArrayList<>();
     private ArrayList<Nation> allLivingNations = new ArrayList<>();
 
@@ -28,7 +27,7 @@ public class World
         {
             ArrayList<Integer> worldSurvivingPeople = new ArrayList<>();
 
-            for(int round = 1; round < numberOfRounds; round++)
+            for(int round = 1; round <= numberOfRounds; round++)
             {
                 Set<String> survivingNations = new HashSet<>();
                 System.out.println("Round number: " + round);
@@ -62,12 +61,12 @@ public class World
 
 
 
-    public void createWorld()
-    {
-        allNations.add(new Nation("Minions", (worldLifePoints) / 5));
-        allNations.add(new Nation("Robs Nation", (worldLifePoints / 5)));
-        allNations.add(new Nation("Braden Nation", (worldLifePoints / 5)));
-        allNations.add(new Nation("Sussy Impostors", (worldLifePoints / 5)));
+    public void createWorld() {   
+        String[] nation_names = {"Minions", "Robs Nation", "Robs Nation", "Braden Nation", "Sussy Impostors"};
+        int number_of_nations = nation_names.length;
+        for(String nation_name : nation_names)
+            allNations.add(new Nation(nation_name, worldLifePoints / number_of_nations));
+
     }
 
 
@@ -122,26 +121,28 @@ public class World
         person1LifePointsToUse = worldCreatedPeople.get(person1).encounterLifePoints(worldCreatedPeople.get(person2), worldCreatedPeople.get(person1));
         person2LifePointsToUse = worldCreatedPeople.get(person2).encounterLifePoints(worldCreatedPeople.get(person1), worldCreatedPeople.get(person2));
 
+        if(worldCreatedPeople.get(person1).getNation().equals(worldCreatedPeople.get(person1).getNation())) {
+            // freindly encounter, each player gains 1 life
+            worldCreatedPeople.get(person1).modifyLifePoints((1));
+            worldCreatedPeople.get(person2).modifyLifePoints((1));
+        }
         // amount of life points actually used is subject to a psuedo-random encounter
         Integer p1damage =  (int) (generator.nextFloat() * person1LifePointsToUse);
         Integer p2damage =  (int) (generator.nextFloat() * person2LifePointsToUse);
-
-        if ((p1damage > 0) && (p2damage > 0))  // person 1  and person 2 are fighting and inflicting damage
-        {
+        if ((p1damage > 0) && (p2damage > 0)){
+            // person 1  and person 2 are fighting and inflicting damage
             p2damage =  (int) (generator.nextFloat() * (worldCreatedPeople.get(person1).getType().ordinal()+1)*p1damage);
             p1damage =  (int) (generator.nextFloat() * (worldCreatedPeople.get(person2).getType().ordinal()+1)*p2damage);
-        }
-        else if ((p1damage > 0) && (p2damage <= 0)) // person 1 is fighting and person 2 is running
-        {
-            p2damage =  (int) (generator.nextFloat() * (worldCreatedPeople.get(person1).getType().ordinal()+1)*(p1damage/3));
-        }
-        else if ((p1damage <= 0) && (p2damage > 0)) // person 2 is fighting and person 1 is running
-        {
-            p1damage =  (int) (generator.nextFloat() * (worldCreatedPeople.get(person2).getType().ordinal()+1)*(p2damage/3));
-        }
-        else // freindly encounter, do nothing
-        {
-
+        } else if((p1damage < 1) && (p2damage < 1)) {
+            //cowards encounter: nothing happens
+        } else if (p1damage > 0) {
+            // person 1 is fighting and person 2 is running
+            p1damage = 1;
+            p2damage = -1;
+        } else {
+            // person 2 is fighting and person 1 is running
+            p2damage = 1;
+            p1damage = -1;        
         }
 
         // record the damage: positive damage should be subtracted for persons lifePoint
@@ -169,6 +170,10 @@ public class World
             encounter(combatants.get(combatantIndex), combatants.get(combatantIndex+1));
             combatantIndex = combatantIndex + 2;
         }
+
+        // makes sure that all peoples can never have greater than the maximum life points 
+        for(People person: worldCreatedPeople)
+            person.setLifePoints(Math.min(person.getLifePoints(), MaximumLifePoints));
     }
 
 

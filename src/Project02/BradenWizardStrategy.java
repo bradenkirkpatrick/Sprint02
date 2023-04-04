@@ -14,7 +14,7 @@ public class BradenWizardStrategy implements Strategy{
         if(me.getNation() == otherPerson.getNation()) {
             if(PeopleType.wizard == otherPerson.getType()){
                 if(otherPerson.getLifePoints() > me.getLifePoints()) {
-                    lifePoints = -Math.min(me.getLifePoints() - 1, 100 - otherPerson.getLifePoints());
+                    lifePoints = Math.min(me.getLifePoints() - 1, 98 - otherPerson.getLifePoints());
                 }
             }
         } else {

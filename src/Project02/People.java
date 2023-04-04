@@ -1,7 +1,5 @@
 package Project02;
 
-import Project02.PeopleType;
-
 public abstract class People
 {
     /**
@@ -117,6 +115,15 @@ public abstract class People
     public void modifyLifePoints(int points)
     {
         myLifePoints += points;
+    }
+
+    /**
+     * @param points
+     * the setLifePoints is a method that sets live points to a value
+     */
+    public void setLifePoints(int points)
+    {
+        myLifePoints = points;
     }
 
     /**

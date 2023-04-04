@@ -16,7 +16,7 @@ public class RobertWarriorStrategy implements Strategy {
         if (me.getNation() == otherPerson.getNation()) {
             if (otherPerson.getTribe() != me.getTribe()) { // if tribe is not mine attack
                 lifePoints = (int) (me.getLifePoints() / 2);
-            } else {
+            } else { 
                 lifePoints = (int) (me.getLifePoints() / 4); //still attack because why not
             }
         }
@@ -24,4 +24,4 @@ public class RobertWarriorStrategy implements Strategy {
     }
 }
 
-//no healing for warriors because warriors are to tough to heal
+//no healing for warriors because warriors are too tough to want healing

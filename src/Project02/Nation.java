@@ -1,11 +1,5 @@
 package Project02;
-
-import java.util.Collection;
-import java.util.Collections;
 import java.util.ArrayList;
-import Project02.Tribe;
-import Project02.People;
-
 
 public class Nation
 {
@@ -31,13 +25,12 @@ public class Nation
      * After it adds the tribes to the population and then adds the population to the living population
      *
      */
-    public Nation(String name, int lifePoints)
-    {
+    public Nation(String name, int lifePoints) {
         nationName = name;
         nationLifePoints = lifePoints;
-        for(int i = 0; i < 5; i++)
-        {
-            this.tribes.add(new Tribe(nationName, "Tribe" + i, nationLifePoints / 5));
+        // each nation gets two tribes
+        for(int i = 1; i < 3; i++) {
+            this.tribes.add(new Tribe(nationName, "Tribe" + i, nationLifePoints / 2));
         }
         population.addAll(getNationPopulation());
         livingPopulation.addAll(population);
@@ -50,14 +43,11 @@ public class Nation
      * the getNationPopulation method loops through the tribes to see if they are still alive and returns the living population
      *
      */
-    public ArrayList<People> getNationPopulation()
-    {
+    public ArrayList<People> getNationPopulation() {
         nationLifePoints = 0;
         livingPopulation.clear();
-        for(int tribe = 0; tribe < this.tribes.size(); tribe++)
-        {
-            if(tribes.get(tribe).isTribeAlive())
-            {
+        for(int tribe = 0; tribe < this.tribes.size(); tribe++) {
+            if(tribes.get(tribe).isTribeAlive()) {
                 //System.out.println(tribes.get(tribe));
                 livingPopulation.addAll(tribes.get(tribe).getLivingTribeMembers());
                 //System.out.println(tribes.get(tribe).getLivingTribeMembers());
