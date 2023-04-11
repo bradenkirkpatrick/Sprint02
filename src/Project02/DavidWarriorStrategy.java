@@ -3,7 +3,11 @@ import java.util.Random;
 
 public class DavidWarriorStrategy implements Strategy {
     private Random rand = new Random();
-    
+
+    /**
+     * The strategy will take the life points, divide them by for if they are from the same trive, and by 2 if only from the same nation,
+     * other wise the lifepoints will be equalled to one of the other person's life points.
+     */
     public int strategy(People me, People otherPerson) {
         int lifePoints = 0;
         if(me.getNation() == otherPerson.getNation())
