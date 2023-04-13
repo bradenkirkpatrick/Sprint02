@@ -4,6 +4,7 @@ public class RobertHealerStrategy implements Strategy {
 
     public int strategy(People me, People otherPerson) {
         int lifePoints = 0;
+        int intendedHealingPoints = 100;
         if (me.getNation() != otherPerson.getNation()) {
             lifePoints = -me.getLifePoints();// - run away
         }
