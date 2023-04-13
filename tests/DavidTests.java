@@ -38,6 +38,13 @@ public class DavidTests {
         // i actually changed the life
         assertEquals(100, dwiz.getLifePoints());
         assertEquals(120, dwar.getLifePoints());
+    }
+
+    @Test
+    public void testDie() {
+        Die d = new Die(6);
+        assertNotEquals(d.getRand(), 0);
+        assertNotEquals(d.getRand(), 7);
 
     }
 }

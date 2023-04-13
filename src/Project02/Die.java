@@ -32,7 +32,7 @@ public class Die {
      * @return integer
      */
     public int getRand() {
-        return rand.nextInt(numFaces);
+        return rand.nextInt(numFaces) + 1;
     }
 
 }
