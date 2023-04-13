@@ -4,12 +4,12 @@ public enum PeopleType
 {
     wizard  ("wizard"),
     warrior ("warrior"),
-    healer  ("healer");
+    healer  ("healer"),
+    artifact ("artifact");
 
     private String description;
 
     /**
-     *
      * @param types
      * PeopleType constructor takes in a String called tyoes and sets it to the current description
      */
