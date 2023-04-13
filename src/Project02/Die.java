@@ -13,7 +13,7 @@ public class Die {
      * @param faces
      */
     public Die(int faces) {
-        if (faces >= 2 && faces <= 20) {
+        if (faces >= 2) {
             this.numFaces = faces;
         }
         else {
@@ -21,6 +21,7 @@ public class Die {
         }
     }
 
+    // This might not be used, just a fallback just in case ;)
     public Die() {
         this.numFaces = 6;
     }
