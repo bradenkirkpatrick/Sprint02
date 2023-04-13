@@ -1,5 +1,5 @@
 package Project02;
-public class RobertHealerStrategy implements Strategy {
+public class RobertHealerStrategy extends Die implements Strategy {
 
 
     public int strategy(People me, People otherPerson) {
@@ -11,7 +11,9 @@ public class RobertHealerStrategy implements Strategy {
         else
         {
             if (otherPerson.getType() == PeopleType.warrior) {
-
+                Die die = new Die(intendedHealingPoints);
+                int actualHealPoints = die.getRand();
+                lifePoints = (int) (otherPerson.getLifePoints() + actualHealPoints);
             }
             else if (otherPerson.getType() == PeopleType.wizard) {
 
