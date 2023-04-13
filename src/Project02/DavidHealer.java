@@ -2,7 +2,7 @@ package Project02;
 
 public class DavidHealer extends People {
     public DavidHealer(String nation, String tribe, int lifePoints, Strategy strategy) {
-        super(nation, tribe, PeopleType.healer, lifePoints, strategy)
+        super(nation, tribe, PeopleType.healer, lifePoints, strategy);
         myDescription = "Jahwol!";
     }
 
