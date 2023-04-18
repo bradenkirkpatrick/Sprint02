@@ -35,7 +35,6 @@ public class DavidTests {
         DavidWizard dwiz = new DavidWizard("Israel", "Dan",  100, new DavidWizardStrategy());
         DavidWizard dwar = new DavidWizard("Edom", "huh", 120, new DavidWarriorStrategy());
         w.encounter(dwiz.encounterLifePoints(dwiz, dwar), dwar.encounterLifePoints(dwar, dwiz));
-        // i actually changed the life
         assertEquals(100, dwiz.getLifePoints());
         assertEquals(120, dwar.getLifePoints());
     }
