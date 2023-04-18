@@ -7,7 +7,6 @@ public class RobertWizard extends People{
 
 
     /**
-     *
      * @param nation
      * @param tribe
      * @param lifePoints
