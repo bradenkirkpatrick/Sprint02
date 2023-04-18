@@ -1,9 +1,9 @@
 package Project02;
 
 public class Artifacts extends AbstractTribe{
-    public Artifacts() {
-        nationName = "Artifacts";
+    public Artifacts(String nation) {
+        nationName = nation;
         tribeName = "Artifacts";
-        tribeLifePoints = 1;
+        tribeLifePoints = 200;
     }
 }
