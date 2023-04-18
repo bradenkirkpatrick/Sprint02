@@ -8,7 +8,6 @@ The DavidHealerStrategy is an implementation of the Strategy interface for heale
  * programmed to attack an enemy, it will simply run away.
  */
 public class DavidHealerStrategy implements Strategy {
-    // TODO
     @Override
     public int strategy(People me, People otherPerson) {
         int lifePoints = 0;
