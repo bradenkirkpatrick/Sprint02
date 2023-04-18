@@ -1,7 +1,7 @@
 package Project02;
 import java.util.ArrayList;
 
-public class AbstractTribe {
+public abstract class AbstractTribe {
     protected String nationName;
     protected String tribeName;
     protected int tribeLifePoints;
