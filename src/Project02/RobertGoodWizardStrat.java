@@ -16,20 +16,13 @@ public class RobertGoodWizardStrat implements Strategy {
      * their strategy attack
      */
     public int strategy(People me, People otherPerson) {
-        int intendedPoints = 100;
+
         int lifePoints = 0;
         if (me.getNation() != otherPerson.getNation()) {
             if (otherPerson.getType() == PeopleType.warrior) {
                 lifePoints = (int) (me.getLifePoints() / 2);
             } else if (otherPerson.getType() == PeopleType.wizard) {
-                Die die = new Die(intendedPoints);
-                // if roll is greater than or equal to 50 i destroy the wiz
-                if (die.roll() >= 50) {
-                    lifePoints = (int) otherPerson.getLifePoints() - 100;
-                } else {
-                    // counter me and lose half my health
-                    lifePoints = (int) (me.getLifePoints() / 2);
-                }
+                // need to destroy wiz
             } else if (otherPerson.getType() == PeopleType.healer) {
                 // need to make it so i absolutley demolish the other healers
             }
