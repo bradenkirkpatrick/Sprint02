@@ -1,10 +1,11 @@
 package Project02;
 import java.util.Random;
+import java.util.Date;
 
 
 public class Die {
     private final int numFaces;
-    private Random rand = new Random();
+    private Random rand = new Random((int)(new Date().getTime() / 86400000));
 
     /**
      * The constructor takes a parameter as the number of faces on
@@ -31,7 +32,7 @@ public class Die {
      * of the die.
      * @return integer
      */
-    public int getRand() {
+    public int roll() {
         return rand.nextInt(numFaces) + 1;
     }
 

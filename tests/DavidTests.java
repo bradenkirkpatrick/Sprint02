@@ -42,8 +42,8 @@ public class DavidTests {
     @Test
     public void testDie() {
         Die d = new Die(6);
-        assertNotEquals(d.getRand(), 0);
-        assertNotEquals(d.getRand(), 7);
+        assertNotEquals(d.roll(), 0);
+        assertNotEquals(d.roll(), 7);
 
     }
 }
