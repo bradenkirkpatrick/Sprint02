@@ -10,7 +10,7 @@ package Project02;
 public class BradenWizard extends People{
     public BradenWizard(String nation, String tribe, int lifePoints, Strategy strategy) {
         super(nation, tribe, PeopleType.wizard, lifePoints, strategy);
-        myDescription = "Beep boop beep boop";
+        myDescription = "Somthin";
     }
 
     /*

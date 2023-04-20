@@ -6,6 +6,7 @@ import java.util.Date;
 public class Die {
     private final int numFaces;
     private Random rand = new Random((int)(new Date().getTime() / 86400000));
+    private static Die die;
 
     /**
      * The constructor takes a parameter as the number of faces on
@@ -13,18 +14,16 @@ public class Die {
      * the constructor will fall back to 6.
      * @param faces
      */
-    public Die(int faces) {
-        if (faces >= 2) {
-            this.numFaces = faces;
-        }
-        else {
+    private Die(int faces) {
+        if (faces < 2)
             this.numFaces = 6;
-        }
+        else 
+            this.numFaces = faces;
     }
-
-    // This might not be used, just a fallback just in case ;)
-    public Die() {
-        this.numFaces = 6;
+    public static Die getInstance(int faces) {
+        if(die == null)
+            die = new Die(faces);
+        return die;
     }
 
     /**
@@ -34,6 +33,24 @@ public class Die {
      */
     public int roll() {
         return rand.nextInt(numFaces) + 1;
+    }
+
+    /**
+     * Returns a random integer, with given number of faces
+     * of the die.
+     * @return integer
+     */
+    public static int roll(int faces) {
+        return getInstance(faces).roll();
+    }
+
+    /**
+     * Returns a random integer, with given number of faces
+     * of the die.
+     * @return double
+     */
+    public static double random() {
+        return getInstance(6).rand.nextDouble();
     }
 
 }

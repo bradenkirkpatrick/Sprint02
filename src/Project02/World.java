@@ -1,6 +1,11 @@
 package Project02;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Random;
+import java.util.Date;
+import java.util.Set;
+import java.util.HashSet;
+import java.util.Collections;
 
 public class World
 {
@@ -127,21 +132,21 @@ public class World
             worldCreatedPeople.get(person2).modifyLifePoints((1));
         }
         // amount of life points actually used is subject to a psuedo-random encounter
-        Integer p1damage =  (int) (generator.nextFloat() * person1LifePointsToUse);
-        Integer p2damage =  (int) (generator.nextFloat() * person2LifePointsToUse);
+        Integer p1damage =  Die.roll(person1LifePointsToUse);
+        Integer p2damage =  Die.roll(person2LifePointsToUse);
         if ((p1damage > 0) && (p2damage > 0)){
             // person 1  and person 2 are fighting and inflicting damage
-            p2damage =  (int) (generator.nextFloat() * (worldCreatedPeople.get(person1).getType().ordinal()+1)*p1damage);
-            p1damage =  (int) (generator.nextFloat() * (worldCreatedPeople.get(person2).getType().ordinal()+1)*p2damage);
+            p2damage =  (int)(Die.random()*p1damage);
+            p1damage =  (int)(Die.random()*p2damage);;
         } else if((p1damage < 1) && (p2damage < 1)) {
             //cowards encounter: nothing happens
         } else if (p1damage > 0) {
             // person 1 is fighting and person 2 is running
-            p1damage = 1;
+            p1damage = (int)(.5 * Die.random()*p1damage);
             p2damage = -1;
         } else {
             // person 2 is fighting and person 1 is running
-            p2damage = 1;
+            p2damage = (int)(.5 * Die.random()*p1damage);
             p1damage = -1;        
         }
 

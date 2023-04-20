@@ -7,17 +7,17 @@ public class DavidGoodWarriorStrategy implements Strategy {
         int lifePoints = 0;
         if (!(me.getNation().equals(otherPerson.getNation()))) {
             if (otherPerson.getType().equals(PeopleType.wizard)) {
-                Die d = new Die(100);
+                Die d = Die.getInstance(100);
                 int takePoints = d.roll();
                 lifePoints = (int) (otherPerson.getLifePoints() - takePoints);
             }
             else if (otherPerson.getType().equals(PeopleType.warrior))  {
-                Die d = new Die(50);
+                Die d = Die.getInstance(50);
                 int takePoints = d.roll() * 2;
                 lifePoints = (int) (otherPerson.getLifePoints() - takePoints);
             }
             else {
-                Die d = new Die(25);
+                Die d = Die.getInstance(25);
                 int takePoints = d.roll() * 4;
                 lifePoints = (int) (otherPerson.getLifePoints() - takePoints);
             }
