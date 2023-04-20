@@ -7,7 +7,28 @@ public class DavidGoodWizardStrategy implements Strategy {
      */
     public int strategy(People me, People otherPerson) {
         int lifePoints = 0;
-        
+        if (me.getNation().equals(otherPerson.getNation())) {
+            if (otherPerson.getType().equals(PeopleType.wizard)) {
+                // TODO
+            }
+            else if (otherPerson.getType().equals(PeopleType.healer)) {
+                // maybe the wizard gives some health to the healer ;)
+                Die die2 = Die.getInstance(2);
+                if (die2.roll() == 0) {
+                    lifePoints = 0;
+                }
+                else {
+                    Die d = Die.getInstance(10);
+                    int givePoints = d.roll();
+                    lifePoints = (int) (otherPerson.getLifePoints()) + givePoints;
+                }
+            }
+        }
+        else {
+            Die d = Die.getInstance(35);
+            int takePoints = d.roll();
+            lifePoints = (int) (otherPerson.getLifePoints() -  takePoints);
+        }
         return lifePoints;
     }
 }
