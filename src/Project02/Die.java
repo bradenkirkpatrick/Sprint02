@@ -20,6 +20,13 @@ public class Die {
         else 
             this.numFaces = faces;
     }
+
+    /**
+     * Used as the constuctor, for this class uses the Singleton design
+     * pattern
+     * @param faces
+     * @return die
+     */
     public static Die getInstance(int faces) {
         if(die == null)
             die = new Die(faces);
@@ -36,8 +43,7 @@ public class Die {
     }
 
     /**
-     * Returns a random integer, with given number of faces
-     * of the die.
+     * static method for instantiation(????)
      * @return integer
      */
     public static int roll(int faces) {
@@ -45,8 +51,7 @@ public class Die {
     }
 
     /**
-     * Returns a random integer, with given number of faces
-     * of the die.
+     * in progress distance mechanism
      * @return double
      */
     public static double random() {
