@@ -41,11 +41,12 @@ public class DavidTests {
 
     @Test
     public void testDie() {
-        Die d = new Die(6);
+        
+        Die d = Die.getInstance(6);
         assertNotEquals(d.roll(), 0);
         assertNotEquals(d.roll(), 7);
 
-        d = new Die(50);
+        d = Die.getInstance(50);
         assertNotEquals(d.roll() * 2, 13);
 
     }
