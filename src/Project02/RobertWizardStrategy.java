@@ -1,7 +1,5 @@
 package Project02;
 
-import java.util.Random;
-
 /**
  * The RobertWizardStrategy class implements the Strategy interface and implimenrts 
  * the strategy method
