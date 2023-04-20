@@ -1,8 +1,6 @@
 package Project02;
-import java.util.Random;
 
 public class DavidWarriorStrategy implements Strategy {
-    private Random rand = new Random();
 
     /**
      * The strategy will take the life points, divide them by for if they are from the same trive, and by 2 if only from the same nation,

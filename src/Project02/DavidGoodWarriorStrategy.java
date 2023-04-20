@@ -1,5 +1,4 @@
 package Project02;
-import java.util.Random;
 
 public class DavidGoodWarriorStrategy implements Strategy {
     // TODO

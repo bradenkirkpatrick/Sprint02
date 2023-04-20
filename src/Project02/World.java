@@ -1,8 +1,6 @@
 package Project02;
 
 import java.util.ArrayList;
-import java.util.Random;
-import java.util.Date;
 import java.util.Set;
 import java.util.HashSet;
 import java.util.Collections;
@@ -15,15 +13,11 @@ public class World
     private ArrayList<Nation> allNations = new ArrayList<>();
     private ArrayList<Nation> allLivingNations = new ArrayList<>();
 
-    private Random generator;
     private ArrayList<People> worldCreatedPeople = new ArrayList<>();
 
     
     public World()
     {
-        // seed for psuedo-random number generator
-        Date seed = new Date();
-        generator = new Random(seed.getTime());
         createWorld();
         worldCreatedPeople.addAll(getWorldCreatedPopulation());
     }
