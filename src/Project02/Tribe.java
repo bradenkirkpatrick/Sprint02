@@ -12,7 +12,7 @@ public class Tribe extends AbstractTribe{
         }
         else if (nationName == "Sussy Impostors") {
             members.add(new DavidWarrior(nationName, tribeName, tribeLifePoints, new DavidGoodWarriorStrategy()));
-            members.add(new DavidWizard(nationName, tribeName, tribeLifePoints, new DavidWizardStrategy()));
+            members.add(new DavidWizard(nationName, tribeName, tribeLifePoints, new DavidGoodWizardStrategy()));
             members.add(new DavidHealer(nationName, tribeName, tribeLifePoints, new DavidHealerStrategy()));
         }
         else if(nationName == "Robs Nation"){
