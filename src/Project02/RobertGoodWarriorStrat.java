@@ -1,12 +1,6 @@
 package Project02;
 
-/**
- * The RobertWizardStrategy class implements the Strategy interface and
- * implimenrts
- * the strategy method
- */
-public class RobertGoodWizardStrat implements Strategy {
-
+public class RobertGoodWarriorStrat implements Strategy{
     /**
      * the method strategy takes in two people as a paramter and when an encounter
      * occurs
@@ -14,18 +8,19 @@ public class RobertGoodWizardStrat implements Strategy {
      * their strategy attack
      */
     public int strategy(People me, People otherPerson) {
+
         Die die = Die.getInstance(100);
         int lifePoints = 0;
         if (me.getNation() != otherPerson.getNation()) {
-            if (otherPerson.getType() == PeopleType.warrior) {
+            if (otherPerson.getType() == PeopleType.wizard) {
                 lifePoints = (int) (me.getLifePoints() / 2);
-            } else if (otherPerson.getType() == PeopleType.wizard) {
+            } else if (otherPerson.getType() == PeopleType.warrior) {
                 lifePoints = (int) (me.getLifePoints() + die.roll());
             } else if (otherPerson.getType() == PeopleType.healer) {
                 if(die.roll() > 50){
                     lifePoints = (int) (me.getLifePoints() + die.roll());
                 }
-                int num = (int)(die.roll() / 2);
+               int num = (int)(die.roll() / 2);
                 lifePoints = (int) (me.getLifePoints() / num);
             }
         } else {
@@ -39,3 +34,4 @@ public class RobertGoodWizardStrat implements Strategy {
         return lifePoints;
     }
 }
+
