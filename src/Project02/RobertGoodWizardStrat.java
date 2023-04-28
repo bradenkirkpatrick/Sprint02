@@ -14,18 +14,17 @@ public class RobertGoodWizardStrat implements Strategy {
      * their strategy attack
      */
     public int strategy(People me, People otherPerson) {
-        Die die = Die.getInstance(100);
         int lifePoints = 0;
         if (me.getNation() != otherPerson.getNation()) {
             if (otherPerson.getType() == PeopleType.warrior) {
                 lifePoints = (int) (me.getLifePoints() / 2);
             } else if (otherPerson.getType() == PeopleType.wizard) {
-                lifePoints = (int) (me.getLifePoints() + die.roll());
+                lifePoints = (int) (me.getLifePoints() + Die.roll(100));
             } else if (otherPerson.getType() == PeopleType.healer) {
-                if(die.roll() > 50){
-                    lifePoints = (int) (me.getLifePoints() + die.roll());
+                if(Die.roll(2) == 1){
+                    lifePoints = (int) (me.getLifePoints() + Die.roll(100));
                 }
-                int num = (int)(die.roll() / 2);
+                int num = (int)(Die.roll(100) / 2);
                 lifePoints = (int) (me.getLifePoints() / num);
             }
         } else {

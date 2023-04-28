@@ -16,8 +16,7 @@ public class DavidHealerStrategy implements Strategy {
             lifePoints = -me.getLifePoints();// - run away
         }
         else {
-            Die die = Die.getInstance(maxPoints);
-            int healPoints = die.roll();
+            int healPoints = Die.roll(maxPoints);
             lifePoints = (int) (otherPerson.getLifePoints() + healPoints);
         }
         return lifePoints;

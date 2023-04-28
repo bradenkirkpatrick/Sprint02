@@ -1,61 +1,32 @@
 package Project02;
 import java.util.Random;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 
 
 public class Die {
-    private final int numFaces;
-    private Random rand = new Random((int)(new Date().getTime() / 86400000));
-    private static Die die;
+    private static final Random rand = new Random((int)(new Date().getTime() / 86400000));
 
     /**
-     * The constructor takes a parameter as the number of faces on
-     * a die, if that number is not between 2 and 20 inclusive,
-     * the constructor will fall back to 6.
-     * @param faces
-     */
-    private Die(int faces) {
-        if (faces < 2)
-            this.numFaces = 6;
-        else 
-            this.numFaces = faces;
-    }
-
-    /**
-     * Used as the constuctor, for this class uses the Singleton design
-     * pattern
-     * @param faces
-     * @return die
-     */
-    public static Die getInstance(int faces) {
-        if(die == null)
-            die = new Die(faces);
-        return die;
-    }
-
-    /**
-     * Returns a random integer, bounded to the number of faces
-     * of the die.
-     * @return integer
-     */
-    public int roll() {
-        return rand.nextInt(numFaces) + 1;
-    }
-
-    /**
-     * static method for instantiation(????)
-     * @return integer
+     * Returns a random integer from 1 to faces
+     * @return int
      */
     public static int roll(int faces) {
-        return getInstance(faces).roll();
+        return rand.nextInt(faces) + 1;
     }
 
     /**
-     * in progress distance mechanism
-     * @return double
+     * Returns a random integer form 1 to 10
+     * @return int
      */
-    public static double random() {
-        return getInstance(6).rand.nextDouble();
+    public static int distance() {
+        return roll(10);
     }
-
+    /**
+     * shuffles list with seed
+     */
+    public static void shuffle(ArrayList<Integer> cards) {
+        Collections.shuffle(cards, rand);
+    }
 }

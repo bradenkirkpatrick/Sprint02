@@ -6,8 +6,7 @@ public class RobertHealerStrategy implements Strategy {
         int lifePoints = 0;
         int intendedHealingPoints = 100;
         if (me.getNation() == otherPerson.getNation()) {
-            Die die = Die.getInstance(intendedHealingPoints);
-            int actualHealPoints = die.roll();
+            int actualHealPoints = Die.roll(intendedHealingPoints);
             lifePoints = (int) (otherPerson.getLifePoints() + actualHealPoints);
         } else {
             lifePoints = -me.getLifePoints();// - run away

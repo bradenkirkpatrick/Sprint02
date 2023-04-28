@@ -5,8 +5,7 @@ public class BradenHealerStrategy implements Strategy {
         int lifePoints = 0;
         int intendedHealingPoints = 100;
         if (me.getNation() == otherPerson.getNation()) {
-            Die die = Die.getInstance(intendedHealingPoints);
-            int actualHealPoints = die.roll();
+            int actualHealPoints = Die.roll(intendedHealingPoints);
             if (otherPerson.getType() == PeopleType.wizard) {
                 lifePoints = (int) (otherPerson.getLifePoints() + (actualHealPoints / 2));
             } else if (otherPerson.getType() == PeopleType.warrior) {
