@@ -15,7 +15,7 @@ public class RobertWarrior extends People{
      */
     public RobertWarrior(String nation, String tribe, int lifePoints, Strategy warriorStrategy) {
         super(nation, tribe, PeopleType.warrior, lifePoints, warriorStrategy);
-        myDescription = "\tRobert Warrior";
+        myDescription = "Robert Warrior";
     }
 
     /**

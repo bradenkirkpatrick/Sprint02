@@ -5,7 +5,7 @@ public class SchaperWizard extends People
     SchaperWizard(String nation, String tribe, int lifePoints, Strategy strategy)
     {
         super(nation, tribe, PeopleType.wizard, lifePoints, strategy);
-        myDescription = "\tSchaper Wizard";
+        myDescription = "Schaper Wizard";
 
     }
 

@@ -151,8 +151,7 @@ public abstract class People
      */
     public String toString()
     {
-        String result = new String( myNation + "\t" +  myTribe + "\t" + me + "\t" + myDescription + "\t" + myLifePoints);
-        return result;
+        return new String(myNation + "\t" +  myTribe + "\t" + me + "\t" + myDescription + "\t" + myLifePoints);
     }
 }
 

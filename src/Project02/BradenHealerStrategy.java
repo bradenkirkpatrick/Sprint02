@@ -3,7 +3,7 @@ package Project02;
 public class BradenHealerStrategy implements Strategy {
     public int strategy(People me, People otherPerson) {
         int lifePoints = 0;
-        int intendedHealingPoints = 100;
+        int intendedHealingPoints = 5;
         if (me.getNation() == otherPerson.getNation()) {
             int actualHealPoints = Die.roll(intendedHealingPoints);
             if (otherPerson.getType() == PeopleType.wizard) {

@@ -18,7 +18,7 @@ public abstract class AbstractTribe {
             } else {
                 if(!(members.get(person).getDead())) {
                     members.get(person).setDead();
-                    System.out.println("\t\t" + members.get(person) + " is dead!");
+                    System.out.println(members.get(person) + " is dead!");
                 }
             }
         }

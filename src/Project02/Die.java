@@ -6,8 +6,8 @@ import java.util.Date;
 
 
 public class Die {
-    private static final Random rand = new Random((int)(new Date().getTime() / 86400000));
-
+    //private static final Random rand = new Random((int)(new Date().getTime() / 86400000));
+    private static final Random rand = new Random();
     /**
      * Returns a random integer from 1 to faces
      * @return int

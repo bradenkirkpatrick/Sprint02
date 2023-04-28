@@ -6,7 +6,7 @@ package Project02;
 public class DavidWarrior extends People {
     public DavidWarrior(String nation, String tribe, int lifePoints, Strategy warriorStrategy) {
         super(nation, tribe, PeopleType.warrior, lifePoints, warriorStrategy);
-        myDescription = "\tDEVS VVLT";
+        myDescription = "DEVS VVLT";
     }
 
     /**
