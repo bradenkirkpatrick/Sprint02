@@ -11,13 +11,13 @@ public class DavidHealerStrategy implements Strategy {
     @Override
     public int strategy(People me, People otherPerson) {
         int lifePoints = 0;
-        int maxPoints = 99;
+        int maxPoints = 20;
         if (!(me.getNation().equals(otherPerson.getNation()))) {
             lifePoints = -me.getLifePoints();// - run away
         }
         else {
-            int healPoints = Die.roll(maxPoints/10);
-            lifePoints = (int) (otherPerson.getLifePoints() + healPoints);
+            int healPoints = Die.roll(maxPoints/2);
+            lifePoints = -Die.roll(healPoints - otherPerson.getLifePoints());
         }
         return lifePoints;
     }

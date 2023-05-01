@@ -13,6 +13,7 @@ public class Die {
      * @return int
      */
     public static int roll(int faces) {
+        if(faces < 2) return 1;
         return rand.nextInt(faces) + 1;
     }
 

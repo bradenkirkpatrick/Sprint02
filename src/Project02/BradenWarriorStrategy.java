@@ -20,7 +20,7 @@ public class BradenWarriorStrategy implements Strategy{
                 }
             }
         } else {
-            lifePoints = me.getLifePoints();
+            lifePoints = me.getLifePoints()/2;
         }
         return lifePoints;
     }

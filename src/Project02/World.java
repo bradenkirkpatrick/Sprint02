@@ -5,9 +5,9 @@ import java.util.Set;
 import java.util.HashSet;
 
 public class World {
-    private final int worldLifePoints = 4000;
-    private final int numberOfRounds = 1000;
-    private final int MaximumLifePoints = 100;
+    private final int worldLifePoints = 1200;
+    private final int numberOfRounds = 40;
+    public static final int MaximumLifePoints = 100;
     private ArrayList<Nation> allNations = new ArrayList<>();
 
     private ArrayList<People> worldCreatedPeople = new ArrayList<>();
@@ -26,8 +26,15 @@ public class World {
             System.out.println("Round number: " + round);
             worldSurvivingPeople.clear();
             worldSurvivingPeople.addAll(getWorldSurvivingPeople());
+            if(round == 5) {
+                worldSurvivingPeople.add(0);
+            } else if(round == 10) {
+                worldSurvivingPeople.add(1);
+            } else if(round == 15) {
+                worldSurvivingPeople.add(2);
+            }
             survivingNations.addAll(getSurvivingNations());
-            if ((worldSurvivingPeople.size() >= 2) && (survivingNations.size() > 1) )
+            if (survivingNations.size() > 1)
                 playOneRound(worldSurvivingPeople);
             else {
                 System.out.print("Game is over! Winning Nation is: ");
@@ -54,6 +61,9 @@ public class World {
 
     public ArrayList<People> getWorldCreatedPopulation() {
         ArrayList<People> livingPeople = new ArrayList<>();
+        livingPeople.add(new DeathTrap());
+        livingPeople.add(new HolyGrail());
+        livingPeople.add(new BookOfTransformation());
         // add all living people from allNations to livingPeople
         for(int nation = 0; nation < allNations.size(); nation++)
             livingPeople.addAll(allNations.get(nation).getNationPopulation());
@@ -73,9 +83,10 @@ public class World {
     public Set<String> getSurvivingNations() {
         Set<String> survivingNations = new HashSet<>();
 
-        for (Integer i = 0; i < worldCreatedPeople.size(); i++)
+        for (Integer i = 0; i < worldCreatedPeople.size(); i++) {
             if(worldCreatedPeople.get(i).isPersonAlive())
                 survivingNations.add(worldCreatedPeople.get(i).getNation());
+        }
         return survivingNations;
     }
 
@@ -132,7 +143,6 @@ public class World {
     }
 
     public void playOneRound(ArrayList<Integer> combatants) {
-        System.out.println(combatants.size());
         Integer numberOfCombatants;
         Die.shuffle(combatants);
         numberOfCombatants = combatants.size() - 1;

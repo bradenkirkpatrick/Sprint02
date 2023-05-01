@@ -18,7 +18,7 @@ public class BradenWizardStrategy implements Strategy{
                 }
             }
         } else {
-            lifePoints = me.getLifePoints();
+            lifePoints = me.getLifePoints()/2;
         }
         return lifePoints;
     }

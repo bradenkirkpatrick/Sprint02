@@ -2,16 +2,14 @@ package Project02;
 
 public class BradenHealerStrategy implements Strategy {
     public int strategy(People me, People otherPerson) {
-        int lifePoints = 0;
-        int intendedHealingPoints = 5;
+        int lifePoints = -1;
         if (me.getNation() == otherPerson.getNation()) {
-            int actualHealPoints = Die.roll(intendedHealingPoints);
             if (otherPerson.getType() == PeopleType.wizard) {
-                lifePoints = (int) (otherPerson.getLifePoints() + (actualHealPoints / 2));
+                lifePoints = Die.roll(me.getLifePoints());
             } else if (otherPerson.getType() == PeopleType.warrior) {
-                lifePoints = (int) (otherPerson.getLifePoints() + actualHealPoints);
+                lifePoints = Die.roll(me.getLifePoints());
             }
-            lifePoints = -me.getLifePoints();// - run away
+            lifePoints = 0;// - run away
         }
         return lifePoints;
     }

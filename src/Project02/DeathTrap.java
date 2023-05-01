@@ -8,7 +8,11 @@ public class DeathTrap extends People{
         return 307000000;
     }
     public DeathTrap() {
-        super("artifacts", "artifacts", PeopleType.artifact, 0, new ArtifactStrategy());
+        super("", "Death Trap", PeopleType.artifact, 100, new ArtifactStrategy());
         myDescription = "Not much is know about it.";
+    }
+    @Override
+    public Boolean isPersonAlive(){
+        return false;
     }
 }

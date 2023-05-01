@@ -24,6 +24,6 @@ public class DavidGoodWizardStrategy implements Strategy {
             int takePoints = Die.roll(35);
             lifePoints = (int) (otherPerson.getLifePoints() -  takePoints);
         }
-        return lifePoints;
+        return lifePoints + 5;
     }
 }
