@@ -2,8 +2,8 @@ package Project02;
 
 public class HolyGrail extends People{
     /*
-        * implements a death trap that kills anyone that encounters it.
-        */
+    * implements a holy grail that curse all enalments and sets that health to max
+    */
     @Override
     public int encounterLifePoints(People me, People otherPerson){
         otherPerson.setLifePoints(World.MaximumLifePoints);

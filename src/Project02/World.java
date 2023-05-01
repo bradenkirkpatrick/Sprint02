@@ -32,6 +32,8 @@ public class World {
                 worldSurvivingPeople.add(1);
             } else if(round == 15) {
                 worldSurvivingPeople.add(2);
+            } else if(round == 20) {
+                worldSurvivingPeople.add(3);
             }
             survivingNations.addAll(getSurvivingNations());
             if (survivingNations.size() > 1)
@@ -64,6 +66,7 @@ public class World {
         livingPeople.add(new DeathTrap());
         livingPeople.add(new HolyGrail());
         livingPeople.add(new BookOfTransformation());
+        livingPeople.add(new Excalibur());
         // add all living people from allNations to livingPeople
         for(int nation = 0; nation < allNations.size(); nation++)
             livingPeople.addAll(allNations.get(nation).getNationPopulation());

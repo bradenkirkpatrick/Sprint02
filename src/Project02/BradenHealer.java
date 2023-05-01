@@ -2,7 +2,7 @@ package Project02;
 
 public class BradenHealer extends People{
 
-    BradenHealer(String nation, String tribe, int lifePoints, Strategy BradenHealerStrategy) {
+    public BradenHealer(String nation, String tribe, int lifePoints, Strategy BradenHealerStrategy) {
         super(nation, tribe, PeopleType.healer, lifePoints, BradenHealerStrategy);
         myDescription = "Braden Healer";
     }
