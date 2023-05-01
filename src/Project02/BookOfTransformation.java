@@ -7,6 +7,7 @@ public class BookOfTransformation extends People {
     @Override
     public int encounterLifePoints(People me, People otherPerson){
         otherPerson.changeStrategy(new HealerStrategy());
+        otherPerson.myDescription = "Healer";
         return 0;
     }
     public BookOfTransformation() {
